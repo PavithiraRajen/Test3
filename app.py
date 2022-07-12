@@ -8,10 +8,10 @@ import os
 import json
 from sklearn.metrics.pairwise import cosine_similarity
 import tensorflow as tf
-#import tensorflow_hub as hub
+import tensorflow_hub as hub
 
 print("new")
-#model = hub.load(r"https://tfhub.dev/google/universal-sentence-encoder-large/5")
+model = hub.load(r"https://tfhub.dev/google/universal-sentence-encoder-large/5")
 print("model loaded")
 
 app = Flask(__name__)
