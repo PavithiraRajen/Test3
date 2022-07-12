@@ -48,7 +48,7 @@ def duplication():
    sim_score = "90"
    r = fn1+fn1+sim_score
    y = json.dumps(r)
-   return name
+   return y
 
 
 if __name__ == '__main__':
