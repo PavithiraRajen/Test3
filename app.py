@@ -24,8 +24,7 @@ def index():
 
 @app.route('/hello', methods=['POST'])
 def hello():
-   req = request.get_json()
-   name = req["name"]
+   name = request.form.get('name')
 
    if name:
        print('Request for hello page received with name=%s' % name)
