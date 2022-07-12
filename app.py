@@ -30,25 +30,24 @@ def duplication():
    base_document = fn1
    documents = [fn2]
        
-   #base_embeddings = model([base_document])
+   base_embeddings = model([base_document])
        
-   #embeddings = model(documents)
+   embeddings = model(documents)
        
-   #scores = cosine_similarity(base_embeddings, embeddings).flatten()
-   #highest_score = 0
-   #highest_score_index = 0
-   #for i, score in enumerate(scores):
-       #if highest_score < score:
-           #highest_score = score
-           #highest_score_index = i
+   scores = cosine_similarity(base_embeddings, embeddings).flatten()
+   highest_score = 0
+   highest_score_index = 0
+   for i, score in enumerate(scores):
+       if highest_score < score:
+           highest_score = score
+           highest_score_index = i
        
-   #most_similar_document = documents[highest_score_index]
+   most_similar_document = documents[highest_score_index]
 
-   #sim_score = {'Similarity Score': int(highest_score*100)}
+   sim_score = {'Similarity Score': int(highest_score*100)}
     
-   sim_score = "90"
-   r = fn1+fn1+sim_score
-   y = json.dumps(r)
+   
+   y = json.dumps(sim_score)
    return y
 
 
