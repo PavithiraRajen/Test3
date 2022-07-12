@@ -6,8 +6,8 @@ from flask import jsonify
 import re
 import os
 from sklearn.metrics.pairwise import cosine_similarity
-#import tensorflow as tf
-#import tensorflow_hub as hub
+import tensorflow as tf
+import tensorflow_hub as hub
 
 print("new")
 #model = hub.load(r"https://tfhub.dev/google/universal-sentence-encoder-large/5")
@@ -26,12 +26,7 @@ def index():
 def hello():
    req = request.get_json()
    name = req["name"]
-   if name:
-       print('Request for hello page received with name=%s' % name)
-       return render_template('hello.html', name = name)
-   else:
-       print('Request for hello page received with no name or blank name -- redirecting')
-       return redirect(url_for('index'))
+   return name
 
 
 if __name__ == '__main__':
