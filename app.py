@@ -15,7 +15,9 @@ print("model loaded")
 
 app = Flask(__name__)
 
-
+def preprocess(c):
+    clean = re.compile('<.*?>')
+    return re.sub(clean, '', c)
 
 @app.route('/duplication', methods=['GET','POST'])
 def duplication():
