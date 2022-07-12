@@ -16,16 +16,36 @@ print("model loaded")
 app = Flask(__name__)
 
 
-@app.route('/')
-def index():
-   print('Request for index page received')
-   return render_template('index.html')
 
-
-@app.route('/hello', methods=['GET','POST'])
-def hello():
+@app.route('/duplication', methods=['GET','POST'])
+def duplication():
    req = request.get_json()
-   name = req["Name"]
+   fn1 = req['article-content1']
+   fn2 = req['article-content2']
+   fn1 = preprocess(fn1)
+   fn2 = preprocess(fn2)
+   base_document = fn1
+   documents = [fn2]
+       
+   #base_embeddings = model([base_document])
+       
+   #embeddings = model(documents)
+       
+   #scores = cosine_similarity(base_embeddings, embeddings).flatten()
+   #highest_score = 0
+   #highest_score_index = 0
+   #for i, score in enumerate(scores):
+       #if highest_score < score:
+           #highest_score = score
+           #highest_score_index = i
+       
+   #most_similar_document = documents[highest_score_index]
+
+   #sim_score = {'Similarity Score': int(highest_score*100)}
+    
+   sim_score = "90"
+   r = fn1+fn1+sim_score
+   y = json.dumps(r)
    return name
 
 
