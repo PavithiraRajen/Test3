@@ -22,10 +22,10 @@ def index():
    return render_template('index.html')
 
 
-@app.route('/hello', methods=['POST'])
+@app.route('/hello', methods=['GET','POST'])
 def hello():
    req = request.get_json()
-   name = req["name"]
+   name = req["Name"]
    return name
 
 
