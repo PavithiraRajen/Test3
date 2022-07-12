@@ -10,9 +10,9 @@ from sklearn.metrics.pairwise import cosine_similarity
 import tensorflow as tf
 import tensorflow_hub as hub
 
-print("new")
+
 model = hub.load(r"https://tfhub.dev/google/universal-sentence-encoder-large/5")
-print("model loaded")
+
 
 app = Flask(__name__)
 
@@ -25,6 +25,8 @@ def duplication():
    req = request.get_json()
    fn1 = req['article-content1']
    fn2 = req['article-content2']
+   #fn1 = "Zendesk is a super star"
+   #fn2 = "Freshdesk is a game changer"
    fn1 = preprocess(fn1)
    fn2 = preprocess(fn2)
    base_document = fn1
@@ -53,6 +55,3 @@ def duplication():
 
 if __name__ == '__main__':
    app.run()
-
-   
-   
