@@ -12,4 +12,4 @@ Werkzeug==2.1.2
 zipp==3.8.0
 scikit-learn==1.1.1
 scipy==1.8.1
-protobuf==3.20.1
+protobuf==4.21.2
